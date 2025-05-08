@@ -37,3 +37,19 @@
   * [Wordpess](enumeration/cms/wordpess.md)
   * [Drupal](enumeration/cms/drupal.md)
   * [Joomla](enumeration/cms/joomla.md)
+
+## Exploitation
+
+* [Payloads](exploitation/payloads.md)
+
+***
+
+* [Reverse Shells](reverse-shells.md)
+* [File transfer](file-transfer/README.md)
+  * [Linux](file-transfer/linux.md)
+  * [Windows](file-transfer/windows.md)
+* [TTY Rev Shell](tty-rev-shell.md)
+
+## Post Exploitation
+
+* [Untitled](post-exploitation/untitled.md)
