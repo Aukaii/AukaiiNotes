@@ -1,6 +1,6 @@
 # Web Recon
 
-### [WAF Checks](web-recon.md#waf-checks)
+### WAF Checks
 
 ```
 # https://github.com/EnableSecurity/wafw00f 

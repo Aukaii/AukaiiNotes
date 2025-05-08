@@ -1,7 +1,5 @@
 # Nmap Scanning
 
-### [Nmap](nmap-scanning.md#nmap)
-
 
 
 ```
@@ -41,11 +39,4 @@ nmap -f <IP>
 nmap --mtu 24 <IP>
 nmap --data-length 30 <IP>
 nmap --source-port 53 <IP>
-
-# Nmap better speed flags
---max-rtt-timeout: Time response per probe
---script-timeout: Time response per script
---host-timeout: Time response for host
---open: Avoid detection if filtered or closed
---min-rate
 ```

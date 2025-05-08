@@ -5,11 +5,10 @@
 ## Recon
 
 * [Web Recon](recon/web-recon.md)
-
-***
-
-* [Nmap Scanning](nmap-scanning.md)
-* [Domain Enumeration](domain-enumeration.md)
+* [Nmap Scanning](recon/nmap-scanning.md)
+* [Domain Enumeration](recon/domain-enumeration/README.md)
+  * [Subdomain Enumeration](recon/domain-enumeration/subdomain-enumeration.md)
+  * [Subdomain Takeover](recon/domain-enumeration/subdomain-takeover.md)
 
 ## Enumeration
 
@@ -28,8 +27,4 @@
 * [RDP - 3389](enumeration/rdp-3389.md)
 * [VNC - 5800-58001-5901](enumeration/vnc-5800-58001-5901.md)
 * [WINRM - 5985 - 5986](enumeration/winrm-5985-5986.md)
-
-***
-
-* [Page 4](page-4/README.md)
-  * [Page 1](page-4/page-1.md)
+* [Files](enumeration/files.md)
