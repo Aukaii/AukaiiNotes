@@ -4,8 +4,18 @@
 # Python web server
 python -m SimpleHTTPServer 8080
 
-wget http://172.20.1.6/file.exe
-curl http://172.20.1.6/file.exe -o file.exe
+# WGET
+wget <URL> -o <OUT_FILE>
+
+# CURL
+curl <URL> -o <OUT_FILE>
+
+# NETCAT
+nc -lvp 1234 > <OUT_FILE> 
+nc <IP> 1234 < <IN_FILE>
+
+# SCP
+scp <SOURCE_FILE> <USER>@<IP>:<DESTINATION_FILE> 
 
 # FTP Server
 twistd -n ftp -p 21 --root /path/
