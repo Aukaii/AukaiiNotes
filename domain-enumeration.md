@@ -14,12 +14,6 @@ gobuster dns -d lookup.thm -w /usr/share/seclists/Discovery/DNS/subdomains-top1m
 ```
 {% endcode %}
 
-####
-
-####
-
-####
-
 #### [Root domains](domain-enumeration.md#root-domains)
 
 Basic
