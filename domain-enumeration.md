@@ -2,7 +2,7 @@
 
 #### Tools
 
-{% code fullWidth="true" %}
+{% code lineNumbers="true" fullWidth="false" %}
 ```sh
 #ffuf
 ffuf -w /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-5000.txt -u http://targethost.local -H "Host: FUZZ.targethost.local" -mc all -v -c
@@ -24,6 +24,7 @@ gobuster dns -d lookup.thm -w /usr/share/seclists/Discovery/DNS/subdomains-top1m
 
 Basic
 
+{% code fullWidth="false" %}
 ```sh
 # https://github.com/OWASP/Amass 
 amass intel -d domain.com -whois 
@@ -34,6 +35,7 @@ https://google.com/search?q=united+airlines
 # Analyze owners on domainbigdata
 https://iqwhois.com/
 ```
+{% endcode %}
 
 #### [Reverse whois](domain-enumeration.md#reverse-whois)
 
