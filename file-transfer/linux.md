@@ -1,6 +1,6 @@
 # Linux
 
-```
+```bash
 # Python web server
 python -m SimpleHTTPServer 8080
 

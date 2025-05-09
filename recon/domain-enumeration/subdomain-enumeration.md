@@ -2,19 +2,18 @@
 
 ### Tools <a href="#passive-sources" id="passive-sources"></a>
 
-```
-#ffuf
-ffuf -w /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-5000.txt -u http://targethost.local -H "Host: FUZZ.targethost.local" -mc all -v -c
-obs:apply filters if necessary
-
+<pre class="language-bash" data-overflow="wrap"><code class="lang-bash">#ffuf
+bas
+<strong>obs:apply filters if necessary
+</strong>
 
 #gobuster
 gobuster dns -d lookup.thm -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt
-```
+</code></pre>
 
 ### Passive Sources <a href="#passive-sources" id="passive-sources"></a>
 
-```
+```bash
 # https://github.com/OWASP/Amass
 # https://github.com/OWASP/Amass/blob/master/examples/config.ini
 amass enum -passive -d domain.com
@@ -61,7 +60,7 @@ crobat -s example.com
 
 ### Active DNS resolution <a href="#active-dns-resolution" id="active-dns-resolution"></a>
 
-```
+```bash
 # Generate custom resolvers list, always
 # https://github.com/vortexau/dnsvalidator
 dnsvalidator -tL https://public-dns.info/nameservers.txt -threads 200
@@ -79,14 +78,14 @@ shuffledns -d example.com -list example-subdomains.txt -r resolvers.txt
 
 ### Alterations and permutations <a href="#alterations-and-permutations" id="alterations-and-permutations"></a>
 
-```
+```bash
 #https://github.com/Josue87/gotator
 gotator -sub subdomains/subdomains.txt -perm permutations_list.txt -depth 1 -numbers 10 -mindup -adv -md
 ```
 
 ### Crawling <a href="#crawling" id="crawling"></a>
 
-```
+```bash
 # 1st resolve subdomains on valid websites
 # https://github.com/projectdiscovery/httpx
 cat subdomains.txt | httpx -follow-host-redirects -random-agent -status-code -silent -retries 2 -title -web-server -tech-detect -location -o webs_info.txt
@@ -102,18 +101,14 @@ cat urls.txt | sed '/^.\{2048\}./d' | grep -Eo 'https?://[^ ]+' | sed 's/]$//' |
 
 ### DNS records <a href="#dns-records" id="dns-records"></a>
 
-
-
-```
+```bash
 # https://github.com/projectdiscovery/dnsx
 dnsx -retry 3 -a -aaaa -cname -ns -ptr -mx -soa -resp -silent -l subdomains.txt
 ```
 
 ### DNS wordlists <a href="#dns-wordlists" id="dns-wordlists"></a>
 
-
-
-```
+```bash
 # https://gist.githubusercontent.com/six2dez/a307a04a222fab5a57466c51e1569acf/raw
 # https://wordlists-cdn.assetnote.io/data/manual/best-dns-wordlist.txt
 # https://gist.github.com/jhaddix/f64c97d0863a78454e44c2f7119c2a6a
@@ -123,9 +118,7 @@ dnsx -retry 3 -a -aaaa -cname -ns -ptr -mx -soa -resp -silent -l subdomains.txt
 
 #### Google Analytics ID <a href="#google-analytics-id" id="google-analytics-id"></a>
 
-
-
-```
+```bash
 # https://github.com/Josue87/AnalyticsRelationships
 cat subdomains.txt | analyticsrelationships
 ```

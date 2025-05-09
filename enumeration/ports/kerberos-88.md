@@ -1,6 +1,6 @@
 # KERBEROS - 88
 
-```
+```bash
 https://www.tarlogic.com/en/blog/how-to-attack-kerberos/
 ```
 

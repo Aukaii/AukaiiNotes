@@ -2,7 +2,7 @@
 
 ### Common
 
-```
+```bash
 # Check real file type
 file file.xxx
 
@@ -48,7 +48,7 @@ rga "whatever" folder/
 
 ### Disk Files
 
-```
+```bash
 # guestmount can mount any kind of disk file
 sudo apt-get install libguestfs-tools
 guestmount --add yourVirtualDisk.vhdx --inspector --ro /mnt/anydirectory
@@ -56,7 +56,7 @@ guestmount --add yourVirtualDisk.vhdx --inspector --ro /mnt/anydirectory
 
 ### Audio
 
-```
+```bash
 # Check spectrogram
 wget https://code.soundsoftware.ac.uk/attachments/download/2561/sonic-visualiser_4.0_amd64.deb
 dpkg -i sonic-visualiser_4.0_amd64.deb
@@ -67,7 +67,7 @@ hideme stego.mp3 -f && cat output.txt #AudioStego
 
 ### Images
 
-```
+```bash
 # Stego
 wget http://www.caesum.com/handbook/Stegsolve.jar -O stegsolve.jar
 chmod +x stegsolve.jar

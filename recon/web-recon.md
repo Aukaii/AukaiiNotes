@@ -2,7 +2,7 @@
 
 ### WAF Checks
 
-```
+```bash
 # https://github.com/EnableSecurity/wafw00f 
 wafw00f -i websites.txt
 
@@ -10,34 +10,34 @@ wafw00f -i websites.txt
 https://github.com/MISP/misp-warninglists
 ```
 
-### [CMS](web-recon.md#cms)
+### CMS
 
-```
+```bash
 # https://github.com/Tuhinshubhra/CMSeeK 
 tr '\n' ',' < websites.txt > cms_test.txt 
 python3 cmseek.py -l cms_test.txt --batch -r
 ```
 
-### [Web screenshot](web-recon.md#web-screenshot)
+### Web screenshot
 
-```
+```bash
 # https://github.com/sensepost/gowitness
 gowitness file -f websites.txt 
 gowitness report serve -D gowitness.sqlite3
 ```
 
-### [Fuzzing](web-recon.md#fuzzing)
+### Fuzzing
 
-```
+```bash
 # https://github.com/ffuf/ffuf
 ffuf -mc all -fc 404 -ac -sf -s -w wordlist.txt -u https://www.domain.com/FUZZ
 ```
 
 ### URLs
 
-#### [URL extraction](web-recon.md#url-extraction)
+#### URL extraction
 
-```
+```bash
  # https://github.com/jaeles-project/gospider
  gospider -S websites.txt --js -t 20 -d 2 --sitemap --robots -w -r > urls.txt
 
@@ -61,9 +61,9 @@ ffuf -mc all -fc 404 -ac -sf -s -w wordlist.txt -u https://www.domain.com/FUZZ
  waymore -i target.com -mode U -oU urls.txt
 ```
 
-#### [Filtering](web-recon.md#filtering)
+### Filtering
 
-```
+```bash
 # https://github.com/tomnomnom/qsreplace
 cat urls.txt | qsreplace -a
 
@@ -73,16 +73,15 @@ cat urls.txt | uro
 
 Patterns
 
-\# https://github.com/tomnomnom/gf&#x20;
-
-```
+```bash
+# https://github.com/tomnomnom/gf
 # https://github.com/1ndianl33t/Gf-Patterns 
 gf sqli urls.txt
 ```
 
 #### JS
 
-```
+```bash
 # https://github.com/w9w/JSA 
 cat urls.txt | python3 jsa.py 
 
@@ -97,7 +96,7 @@ python3 linkfinder.py -d -i https://domain.com/whatever.js -o cli
 
 
 
-```
+```bash
 # https://github.com/tomnomnom/unfurl 
 cat urls.txt | unfurl -u keys 
 cat urls.txt | unfurl -u values

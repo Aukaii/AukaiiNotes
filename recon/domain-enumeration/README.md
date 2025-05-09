@@ -7,7 +7,7 @@
 Basic
 
 {% code fullWidth="false" %}
-```sh
+```bash
 # https://github.com/OWASP/Amass 
 amass intel -d domain.com -whois 
 
@@ -21,14 +21,14 @@ https://iqwhois.com/
 
 #### [Reverse whois](./#reverse-whois)
 
-```sh
+```bash
 https://viewdns.info/reversewhois/?q=United+Airlines
 https://tools.whoisxmlapi.com/reverse-whois-search
 ```
 
 #### [ASN](./#asn)
 
-```sh
+```bash
 https://bgp.he.net/search?search%5Bsearch%5D=united+airlines&commit=Search 
 whois -h whois.radb.net -- '-i origin AS11535' | grep -Eo "([0-9.]+){4}/[0-9]+" | uniq 
 whois -h whois.radb.net -- '-i origin AS20461' | grep -Eo "([0-9.]+){4}/[0-9]+" | uniq | mapcidr -silent | dnsx -ptr -resp-only -retry 3 -silent
@@ -36,7 +36,7 @@ whois -h whois.radb.net -- '-i origin AS20461' | grep -Eo "([0-9.]+){4}/[0-9]+" 
 
 #### [Favicon](./#favicon)
 
-```sh
+```bash
 # https://github.com/pielco11/fav-up
 python3 favUp.py -ff ~/favicon.ico --shodan-cli 
 
@@ -53,7 +53,7 @@ favirecon -u https://target.com/ -v
 
 #### [Google Analytics ID](./#google-analytics-id)
 
-```sh
+```bash
 https://builtwith.com/relationships/united.com
 https://builtwith.com/relationships/tag/UA-29214177
 https://api.hackertarget.com/analyticslookup/?q=united.com
@@ -62,7 +62,7 @@ https://api.hackertarget.com/analyticslookup/?q=UA-16316580
 
 #### [DNS manual recon](./#dns-manual-recon)
 
-```sh
+```bash
 dnsrecon -d www.example.com -a 
 dnsrecon -d www.example.com -t axfr
 dnsrecon -d 
@@ -85,7 +85,7 @@ dnsenum 10.11.1.111
 
 #### [Reverse IP search](./#reverse-ip-search)
 
-```sh
+```bash
 # Get domain from IP
 # https://reverse-ip.whoisxmlapi.com/
 # https://github.com/projectdiscovery/dnsx
@@ -94,7 +94,7 @@ cat ips.txt | dnsx -ptr -resp-only -silent -retry 3
 
 #### [TLD bruteforcing](./#tld-bruteforcing)
 
-```
+```bash
 # TLD bruteforcing tool
 https://github.com/Sybil-Scan/TLDbrute
 ```

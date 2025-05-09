@@ -1,6 +1,6 @@
 # SMTP - 25
 
-```sh
+```bash
 nc -nvv 10.11.1.111 25
 HELO foo
 

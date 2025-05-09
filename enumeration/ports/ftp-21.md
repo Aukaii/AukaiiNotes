@@ -14,24 +14,24 @@ layout:
 
 # FTP - 21
 
-#### Brute force <a href="#brute-force" id="brute-force"></a>
+### Brute force <a href="#brute-force" id="brute-force"></a>
 
-```
+```bash
 hydra -V -f -L <USERS_LIST> -P <PASSWORDS_LIST> ftp://<IP> -u -vV
 ```
 
-#### Downloading file <a href="#downloading-file" id="downloading-file"></a>
+### Downloading file <a href="#downloading-file" id="downloading-file"></a>
 
-```
+```bash
 ftp <IP>
 PASSIVE
 BINARY
 get <FILE>
 ```
 
-#### Uploading file <a href="#uploading-file" id="uploading-file"></a>
+### Uploading file <a href="#uploading-file" id="uploading-file"></a>
 
-```
+```bash
 ftp <IP>
 PASSIVE
 BINARY

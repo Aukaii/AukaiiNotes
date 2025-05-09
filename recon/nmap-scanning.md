@@ -2,7 +2,7 @@
 
 
 
-```
+```bash
 # Default CTF
 nmap -sS -v -p- 10.10.10.10 -Pn -T5
 nmap -sVC -v -pXX,XX,XX 10.10.10.10 -Pn -T5

