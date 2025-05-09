@@ -2,7 +2,7 @@
 
 ### Enumerating vulnerable plugins
 
-{% code fullWidth="true" %}
+{% code fullWidth="false" %}
 ```bash
 wpscan --url targethost.com.br --api-token TOKEN --enumerate vp --plugins-detection aggressive
 ```
@@ -10,7 +10,7 @@ wpscan --url targethost.com.br --api-token TOKEN --enumerate vp --plugins-detect
 
 ### Enumerating vulnerables themes
 
-{% code fullWidth="true" %}
+{% code fullWidth="false" %}
 ```bash
 wpscan --url targethostt.com.br --api-token TOKEN --enumerate vt --plugins-detection aggressive
 ```
@@ -18,7 +18,7 @@ wpscan --url targethostt.com.br --api-token TOKEN --enumerate vt --plugins-detec
 
 ### Breaking md5 hash (possible wordpress hash) with john
 
-{% code fullWidth="true" %}
+{% code fullWidth="false" %}
 ```bash
 john --format=phpass --wordlist=/usr/share/wordlists/rockyou.txt hash
 ```
