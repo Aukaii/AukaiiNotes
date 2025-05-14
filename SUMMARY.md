@@ -38,6 +38,10 @@
   * [Drupal](enumeration/cms/drupal.md)
   * [Joomla](enumeration/cms/joomla.md)
 
+***
+
+* [Web](web.md)
+
 ## Exploitation
 
 * [Payloads](exploitation/payloads.md)
@@ -55,7 +59,8 @@
 * [Host Enumeration](post-exploitation/host-enumeration/README.md)
   * [Linux](post-exploitation/host-enumeration/linux.md)
   * [Windows](post-exploitation/host-enumeration/windows/README.md)
-    * [Page 3](post-exploitation/host-enumeration/windows/page-3.md)
+    * [AD](post-exploitation/host-enumeration/windows/ad/README.md)
+      * [Kerberos](post-exploitation/host-enumeration/windows/ad/kerberos.md)
 * [Privilege Escalation](post-exploitation/privilege-escalation/README.md)
   * [Linux](post-exploitation/privilege-escalation/linux/README.md)
     * [Suid](post-exploitation/privilege-escalation/linux/suid.md)

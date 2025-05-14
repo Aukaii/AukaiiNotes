@@ -2,14 +2,18 @@
 
 ### Tools <a href="#passive-sources" id="passive-sources"></a>
 
-<pre class="language-bash" data-overflow="wrap"><code class="lang-bash">#ffuf
-bas
-<strong>obs:apply filters if necessary
-</strong>
+{% code overflow="wrap" %}
+```bash
+#ffuf
+ffuf -w /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-5000.txt -u http://greenhost.local -H "Host: FUZZ.greenhost.local" -mc all -v -c
+
+obs:apply filters if necessary
+
 
 #gobuster
 gobuster dns -d lookup.thm -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt
-</code></pre>
+```
+{% endcode %}
 
 ### Passive Sources <a href="#passive-sources" id="passive-sources"></a>
 
